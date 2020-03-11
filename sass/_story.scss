@@ -8,6 +8,12 @@
         grid-template-rows: repeat(6, 1fr); // make a 6 by 6 grid to position the 2 images
         grid-template-columns: repeat(6, 1fr);
         align-items: center; // centre photo in it's grid (photos maintain aspect ratio and so do not fill specified grid locations in their entirety)
+        background-size: cover;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-column: 1 / -1;
+            padding: 6rem;
+        }
     }
 
     &__img--1 {
@@ -15,6 +21,11 @@
         grid-row: 2 / 6;
         grid-column: 2 / 6;
         box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-column: 1 / 5;
+            grid-row: 1 / -1;
+        }
     }
     
     &__img--2 {
@@ -23,6 +34,11 @@
         grid-column: 4 / 7;
         z-index: 10; // show image above story content
         box-shadow: 0 2rem 5rem rgba(#000, 0.2);
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-row: 1 / -1;
+            width: 100%;
+        }
     }
 
     &__content {
@@ -33,6 +49,11 @@
         display: grid;
         align-content: center;
         justify-items: start;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-column: 1 / -1;
+            grid-row: 5 / 6;
+        }
     }
 
     &__text {
