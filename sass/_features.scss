@@ -1,4 +1,34 @@
 .features {
-    background-color: $color-grey-light-2;
     grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // columns fit between a minimum of 25 rem and 1fr
+                                                                // making grid responsive, between 3 columns and 1 column.
+
+    gap: 6rem; // new definition, instead of grid-gap
+    align-items: start; // align items is by default set to stretch, 
+                        // so by default feature text would be centred vertically, but it looks more natural at the top
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    row-gap: 1.5rem;
+    column-gap: 2.5rem;
+    
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        
+        grid-row: 1 / span 2; // we did not explicitly define rows, so using -1 here will not work, as second row is implicit.
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
 }
